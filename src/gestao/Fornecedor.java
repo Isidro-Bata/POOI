@@ -4,15 +4,15 @@ import java.util.*;
 import java.io.*;
 
 public class Fornecedor implements Serializable{
+    private int id;
     private String nome;
     private String endereco;
     private String telefone;
     private String tipoFornecedor;
     private String produto;
     private int quantidade;
-    private int id;
 
-    public Fornecedor(String nome, String endereco, String telefone, String tipoFornecedor, String produto, int quantidade, int id) {
+    public Fornecedor(int id, String nome, String endereco, String telefone, String tipoFornecedor, String produto, int quantidade) {
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
