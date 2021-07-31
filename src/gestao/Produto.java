@@ -1,6 +1,8 @@
 package gestao;
+
 import java.io.*;
 import java.util.*;
+
 public class Produto implements Serializable{
     private Integer id, quantidade;
     private boolean estado;
@@ -45,7 +47,5 @@ public class Produto implements Serializable{
     
    public String toString() {
         return "id=" + id + ",nome=" + nome + ", quantidade=" + quantidade + ", preco=" + preco + ", , tipo=" + tipo + ", dataPrazo=" +dataPrazo+"";
-    }
-    
-        
+    }    
 }

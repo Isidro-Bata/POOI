@@ -1,69 +1,85 @@
 package gestao;
+
 import java.util.*;
 import java.io.*;
+
 public class Stock implements Serializable{
-    private String nome, dataEntrada, dataPrazo, tipo;
-    private Integer id = 0, qtdStock,qtdEntrada,quantidade;
-    private float preco;
-    public Produto prod;
-    private Cliente cliente;
-    public Vector<Produto> produto = new Vector();
-    
-    public Stock(){}
-  
-    public void addProduto() throws IOException{}
-    
-    public Produto clienteCompra(String produtoCompra){
-        
-        for(Produto l : produto){
-            if(l.getId() == Integer.parseInt(produtoCompra)){
-                return l;
-            }
-            if(l.getNome().equals(produtoCompra)){
-                return l;
-            }
-        }
-        return null;
-    }
-    public void confirmaCompra(String produtoCompra){
-        cliente = new Cliente();
-        funcionarioVende(cliente.getId(), clienteCompra(produtoCompra));
-    }
-    public Vector funcionarioVende(Integer idCliente, Produto pro){
-        Vector venda = new Vector();
-        Object com = new Object();
-        com = idCliente+""+pro;
-        venda.addElement(com);
-        venda.trimToSize();
-        return venda;
+    private int id;
+    private String nome;
+    private String categoria;
+    private String dataEntrada;
+    private String dataPrazo;
+    private int quantidade;
+    private int qtdEntrada;
+
+    public Stock(int id, String nome, String categoria, String dataEntrada, String dataPrazo, int quantidade, int qtdEntrada) {
+        this.id = id;
+        this.nome = nome;
+        this.categoria = categoria;
+        this.dataEntrada = dataEntrada;
+        this.dataPrazo = dataPrazo;
+        this.quantidade = quantidade;
+        this.qtdEntrada = qtdEntrada;
     }
     
-    public Vector funcionarioVendeComfirma(Vector n){
-        
-        return n;
-    }
-    public void exibirProduto(Produto produto){
-        if(produto != null){
-            System.out.println("================================");
-            System.out.print(produto.getId()+""+
-                             produto.getNome()+""+
-                             produto.getPreco()+""+
-                             produto.getTipo());
-            
-        }
-    }
-    public String getPrazo(){ return dataPrazo;}
-    public void atualizarStock(){}
-    
-    public String toString(){
-        String visual = "";
-        for(int i = 0; i < produto.size(); i++ ){
-            prod = produto.elementAt(i);
-            visual += "\n "+prod;
-        }
-        return visual;
+    public int getId() {
+        return id;
     }
 
-    
-    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getDataEntrada() {
+        return dataEntrada;
+    }
+
+    public void setDataEntrada(String dataEntrada) {
+        this.dataEntrada = dataEntrada;
+    }
+
+    public String getDataPrazo() {
+        return dataPrazo;
+    }
+
+    public void setDataPrazo(String dataPrazo) {
+        this.dataPrazo = dataPrazo;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public int getQtdEntrada() {
+        return qtdEntrada;
+    }
+
+    public void setQtdEntrada(int qtdEntrada) {
+        this.qtdEntrada = qtdEntrada;
+    }
+
+    @Override
+    public String toString() {
+        return "Stock{" + "id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", dataEntrada=" + dataEntrada + ", dataPrazo=" + dataPrazo + ", quantidade=" + quantidade + ", qtdEntrada=" + qtdEntrada + '}';
+    }
 }

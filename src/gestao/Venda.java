@@ -1,6 +1,7 @@
 package gestao;
 import java.util.*;
 import java.io.*;
+
 public class Venda implements Serializable{
     private Integer id;
     private Funcionario funcionario;

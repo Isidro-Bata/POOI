@@ -13,13 +13,13 @@ public class Fornecedor implements Serializable{
     private int quantidade;
 
     public Fornecedor(int id, String nome, String endereco, String telefone, String tipoFornecedor, String produto, int quantidade) {
+        this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.tipoFornecedor = tipoFornecedor;
         this.produto = produto;
         this.quantidade = quantidade;
-        this.id = id;
     }
     
     public String getEndereco() {
