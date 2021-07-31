@@ -1,39 +1,42 @@
 package gestao;
+
 import java.io.*;
+
 public class Validacoes {
-    String msg = "\nDado invalido, informe dado valido: ";
-    BufferedReader x;
-    public Validacoes(){
-        x = new BufferedReader(new InputStreamReader(System.in));
+    String msg = "Dado invalido, informe dado valido: ";
+    BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
+    
+    public Validacoes(){}
+    
+    public double num(String t, int i, int f) {
+        double n=0;
+        do {
+            System.out.print(t);
+            try {
+                n = Double.parseDouble(x.readLine());
+            } catch(NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }catch(IOException io) {
+                System.out.println(io.getMessage());
+            }
+            if(n < i || n > f)
+                System.out.println(msg);
+        }while(n < i || n > f);
+        return n;
     }
-      public String validaString() throws IOException{
-        String nomee;
-        do{
-            nomee = x.readLine();
-           if(nomee.length() < 1)
-               System.out.print(msg);
-           
-        }while(nomee.length() < 1);
-        return nomee;
-    }
-    public int validaInt() throws IOException{
-        int nr;
-        do{
-          nr = Integer.parseInt(x.readLine());
-          if(nr < 0)
-            System.out.print(msg);  
-          
-        }while( nr < 0);
-        return nr;
-    }
-   public float validaFloat() throws IOException{
-        float nr;
-        do{
-          nr = Float.parseFloat(x.readLine());
-          if(nr < 0.0)
-            System.out.print(msg);
-          
-        }while( nr < 0.0);
-        return nr;
+    
+    public String texto(String t, int mTam) {
+        String txt = "";
+        do {
+            System.out.print(t);
+            try {
+                txt = x.readLine();
+            }catch(IOException io){
+                System.out.println(io.getMessage());
+            }
+            if(txt.isEmpty() || txt.length() < mTam)
+                System.out.println(msg);
+        }while(txt.isEmpty() || txt.length() < mTam);
+        return txt;
     }
 }

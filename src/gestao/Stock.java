@@ -11,24 +11,8 @@ public class Stock implements Serializable{
     
     public Stock(){}
   
-    public void addProduto() throws IOException{
-        v = new Validacoes();
-        System.out.print("\n=== Produto ===");
-        System.out.print("\nNome: ");
-        nome = v.validaString();
-        System.out.print("Tipo: ");
-        tipo = v.validaString();
-        System.out.print("Quantidade: ");
-        quantidade = v.validaInt();
-        System.out.print("Preco: ");
-        preco = v.validaFloat();
-        System.out.print("Prazo: ");
-        dataPrazo = v.validaString();
-        id =+ 1;
-        prod = new Produto(id, nome, tipo, quantidade, preco, dataPrazo);
-        produto.addElement(prod);
-        produto.trimToSize();
-    }
+    public void addProduto() throws IOException{}
+    
     public Produto clienteCompra(String produtoCompra){
         
         for(Produto l : produto){
