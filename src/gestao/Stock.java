@@ -22,26 +22,7 @@ public class Stock implements Serializable{
     public void addProduto() throws IOException{
         v = new Validacoes();
         Random gerador = new Random();
-
-        for (int i = 0; i < 1; i++) {
-           nome = String.valueOf(gerador.nextInt(2050));
-        }
-        for (int i = 0; i < 1; i++) {
-           tipo = String.valueOf(gerador.nextInt(2050));
-        }
-        for (int i = 0; i < 1; i++) {
-           quantidade = gerador.nextInt(2050);
-        }
-        for (int i = 0; i < 1; i++) {
-           preco = gerador.nextInt(3400);
-        }
-        for (int i = 0; i < 1; i++) {
-           dataPrazo = String.valueOf(gerador.nextInt(2050));
-        }
-        for (int i = 0; i < 1; i++) {
-           id = gerador.nextInt(100);
-        }
-        /*System.out.print("\n=== Produto ===");
+        System.out.print("\n=== Produto ===");
         System.out.print("\nNome: ");
         nome = v.validaString();
         System.out.print("Tipo: ");
@@ -52,7 +33,7 @@ public class Stock implements Serializable{
         preco = v.validaFloat();
         System.out.print("Prazo: ");
         dataPrazo = v.validaString();
-        id =+ 1;*/
+        id =+ 1;
         prod = new Produto(id, nome, tipo, quantidade, preco, dataPrazo);
         produto.addElement(prod);
         produto.trimToSize();
