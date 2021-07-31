@@ -3,12 +3,12 @@ package gestao;
 import java.io.*;
 
 public class Validacoes {
-    String msg = "Dado invalido, informe dado valido: ";
-    BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
+    private static String msg = "Dado invalido, informe dado valido: ";
+    private static BufferedReader x = new BufferedReader(new InputStreamReader(System.in));
     
     public Validacoes(){}
     
-    public double num(String t, int i, int f) {
+    public static double num(String t, int i, int f) {
         double n=0;
         do {
             System.out.print(t);
@@ -25,7 +25,7 @@ public class Validacoes {
         return n;
     }
     
-    public String texto(String t, int mTam) {
+    public static String texto(String t, int mTam) {
         String txt = "";
         do {
             System.out.print(t);
