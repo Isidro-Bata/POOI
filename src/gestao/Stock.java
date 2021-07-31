@@ -4,24 +4,15 @@ import java.io.*;
 public class Stock implements Serializable{
     private String nome, dataEntrada, dataPrazo, tipo;
     private Integer id = 0, qtdStock,qtdEntrada,quantidade;
-    private Validacoes v;
     private float preco;
     public Produto prod;
     private Cliente cliente;
     public Vector<Produto> produto = new Vector();
     
-    
-    private FileOutputStream   fos = null;
-    private ObjectOutputStream ous = null;
-    private File file;
-    private FileInputStream    fis = null;
-    private ObjectInputStream  ois = null;
-    
     public Stock(){}
-   
+  
     public void addProduto() throws IOException{
         v = new Validacoes();
-        Random gerador = new Random();
         System.out.print("\n=== Produto ===");
         System.out.print("\nNome: ");
         nome = v.validaString();
@@ -38,40 +29,6 @@ public class Stock implements Serializable{
         produto.addElement(prod);
         produto.trimToSize();
     }
-    public void armazenaDados(String nomeArq){
-        try{
-            file = new File(nomeArq);
-            fos = new FileOutputStream(file);
-            ous = new ObjectOutputStream(fos);
-            
-            ous.writeObject(produto);
-            ous.flush();
-            fos.close();
-            ous.close();
-            
-        }catch(FileNotFoundException fx){
-            System.out.println("Arquivo "+nomeArq+" nao encontrado");
-        }catch(IOException ex){
-            System.out.println("Problemas na leitura do ficheiro");
-        }
-    } 
-    public void lerDados(String nomeArq){
-       try{
-            file = new File(nomeArq);
-            fis = new FileInputStream(file);
-            ois = new ObjectInputStream(fis);
-            produto =  (Vector<Produto>) ois.readObject();
-            ois.close();
-            
-        }catch(FileNotFoundException fx){
-            System.out.println("Arquivo "+nomeArq+" nao encontrado");
-        }catch(IOException ex){
-            System.out.println("Problemas na leitura do ficheiro");
-       }catch(ClassNotFoundException cx){
-          System.out.println("Class nao encontrada");
-        }
-    }
-    
     public Produto clienteCompra(String produtoCompra){
         
         for(Produto l : produto){

@@ -3,16 +3,11 @@ import java.io.*;
 import java.util.*;
 public class Produto implements Serializable{
     private Integer id, quantidade;
+    private boolean estado;
     private Validacoes v;
     private float preco;
     private String nome, tipo,dataPrazo;
     private Vector pro = new Vector();
-    
-    private FileOutputStream   fos = null;
-    private ObjectOutputStream ous = null;
-    private File file;
-    private FileInputStream    fis = null;
-    private ObjectInputStream  ois = null;
 
     public Produto(Integer id, String nome, String tipo, Integer quantidade, float preco, String dataPrazo){
         this.id = id;
