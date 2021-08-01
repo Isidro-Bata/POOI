@@ -1,4 +1,4 @@
-package gestao;
+package Entidade;
 
 import java.util.*;
 import java.io.*;
