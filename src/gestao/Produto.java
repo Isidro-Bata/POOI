@@ -4,14 +4,15 @@ import java.io.*;
 import java.util.*;
 
 public class Produto implements Serializable{
-    private Integer id, quantidade;
+    private int id;
+    private int quantidade;
     private boolean estado;
-    private Validacoes v;
     private float preco;
-    private String nome, tipo,dataPrazo;
-    private Vector pro = new Vector();
+    private String nome;
+    private String tipo;
+    private String dataPrazo;
 
-    public Produto(Integer id, String nome, String tipo, Integer quantidade, float preco, String dataPrazo){
+    public Produto(int id, String nome, String tipo, int quantidade, float preco, String dataPrazo){
         this.id = id;
         this.nome = nome;
         this.tipo = tipo;
@@ -43,6 +44,14 @@ public class Produto implements Serializable{
 
     public String getDataPrazo() {
         return dataPrazo;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     
    public String toString() {
