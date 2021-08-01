@@ -1,4 +1,4 @@
-package Administracao;
+package administracao;
 
 public class Administracao {
     

@@ -1,5 +1,5 @@
 package gestao;
-import Entidade.Stock;
+import entidade.Stock;
 import java.io.*;
 import java.util.*;
 class Menu {

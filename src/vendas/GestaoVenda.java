@@ -1,4 +1,4 @@
-package Vendas;
+package vendas;
 
 public class GestaoVenda {
     

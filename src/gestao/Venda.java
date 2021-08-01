@@ -1,7 +1,7 @@
 package gestao;
-import Entidade.Funcionario;
-import Entidade.Cliente;
-import Entidade.Stock;
+import entidade.Funcionario;
+import entidade.Cliente;
+import entidade.Stock;
 import java.util.*;
 import java.io.*;
 
