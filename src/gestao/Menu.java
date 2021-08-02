@@ -1,18 +1,21 @@
 package gestao;
+
 import Validar.Validacoes;
-import entidade.Stock;
+import leituraEscrita.*;
+
 import java.io.*;
 import java.util.*;
 
 class Menu {
-    public static Vector funcionarios, stock, fornecedor, categoria, produto;
+    public static Vector funcionarios, fornecedor, categoria, produto;
     
-    public Menu() { 
+    public Menu() {
         menu();
     }
     
     private void menu() {
         byte opc;
+        lerfich();
         do{
             System.out.print("\tEntrar como:");
             System.out.print("\n1 - Administrador");
@@ -28,6 +31,7 @@ class Menu {
                 break;
             }
         }while(opc != 3);
+        gravarfich();
     }
     
     private void menu1() {
@@ -65,5 +69,19 @@ class Menu {
                     break;
             }
         }while(opc != 3);
+    }
+    
+    private void lerfich() {
+        funcionarios = LeituraEscrita.read("funcionario.dat");
+        fornecedor = LeituraEscrita.read("fornecedor.dat");
+        categoria = LeituraEscrita.read("categoria.dat");
+        produto = LeituraEscrita.read("produto.dat");
+    }
+    
+    private void gravarfich() {
+        LeituraEscrita.write("funcionario.dat",funcionarios);
+        LeituraEscrita.write("fornecedor.dat",fornecedor);
+        LeituraEscrita.write("categoria.dat",categoria);
+        LeituraEscrita.write("produto.dat",produto);
     }
 }
