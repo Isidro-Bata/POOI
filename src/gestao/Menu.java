@@ -6,23 +6,25 @@ import java.util.*;
 
 class Menu {
     public static Vector funcionarios, stock, fornecedor, categoria, produto;
-    private byte opc;
     
-    public Menu() { }
+    public Menu() { 
+        menu();
+    }
     
     private void menu() {
+        byte opc;
         do{
             System.out.print("\tEntrar como:");
             System.out.print("\n1 - Administrador");
             System.out.print("\n2 - Cliente");
             System.out.print("\n3 - Sair");
-            opc = (byte) Validacoes.num("R: ",1,3);
+            opc = (byte) Validacoes.num("\nR: ",1,3);
             switch(opc){
                 case 1:
-                    
+                    menu1();
                     break;
                 case 2:
-                
+                    menu2();
                 break;
             }
         }while(opc != 3);
@@ -36,7 +38,7 @@ class Menu {
             System.out.print("\n2 - Adicionar produtos");
             System.out.print("\n3 - Voltar");
             System.out.print("\n4 - Sair");
-            opc = (byte) Validacoes.num("R: ",1,4);
+            opc = (byte) Validacoes.num("\nR: ",1,4);
             switch(opc){
                 case 1:
                     System.out.println("\tTodos produtos");
@@ -52,12 +54,13 @@ class Menu {
     }
     
     private void menu2() {
+        byte opc;
         do{
             System.out.print("\tCliente:");
             System.out.print("\n1 - Comprar um produto");
             System.out.print("\n2 - Voltar");
             System.out.print("\n3 - Sair");
-            opc = (byte) Validacoes.num("R: ",1,3);
+            opc = (byte) Validacoes.num("\nR: ",1,3);
             switch(opc){
                 case 1:
 
