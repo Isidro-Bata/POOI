@@ -6,8 +6,8 @@ import java.util.*;
 public class Produto extends Stock implements Serializable{
     private float preco;
 
-    public Produto(int id, String nome, String dataEntrada, String dataPrazo, int quantidade, int qtdEntrada, int idCategoria, float preco) {
-        super(id, nome, dataEntrada, dataPrazo, quantidade, qtdEntrada, idCategoria);
+    public Produto(int id, String nome, String dataEntrada, String dataPrazo, int quantidade, int idCategoria, float preco) {
+        super(id, nome, dataEntrada, dataPrazo, quantidade, idCategoria);
         this.preco = preco;
     }
     

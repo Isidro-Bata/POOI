@@ -9,16 +9,14 @@ public class Stock implements Serializable{
     protected String dataEntrada;
     protected String dataPrazo;
     protected int quantidade;
-    protected int qtdEntrada;
     protected int idCategoria;
 
-    public Stock(int id, String nome, String dataEntrada, String dataPrazo, int quantidade, int qtdEntrada, int idCategoria) {
+    public Stock(int id, String nome, String dataEntrada, String dataPrazo, int quantidade, int idCategoria) {
         this.id = id;
         this.nome = nome;
         this.dataEntrada = dataEntrada;
         this.dataPrazo = dataPrazo;
         this.quantidade = quantidade;
-        this.qtdEntrada = qtdEntrada;
         this.idCategoria = idCategoria;
     }
     
@@ -28,7 +26,6 @@ public class Stock implements Serializable{
         this.dataEntrada = st.getDataEntrada();
         this.dataPrazo = st.getDataPrazo();
         this.quantidade = st.getQuantidade();
-        this.qtdEntrada = st.getQtdEntrada();
         this.idCategoria = st.getIdCategoria();
     }
     
@@ -80,16 +77,8 @@ public class Stock implements Serializable{
         this.quantidade = quantidade;
     }
 
-    public int getQtdEntrada() {
-        return qtdEntrada;
-    }
-
-    public void setQtdEntrada(int qtdEntrada) {
-        this.qtdEntrada = qtdEntrada;
-    }
-
     @Override
     public String toString() {
-        return "Stock{" + "id=" + id + ", nome=" + nome + ", categoria=" + idCategoria + ", dataEntrada=" + dataEntrada + ", dataPrazo=" + dataPrazo + ", quantidade=" + quantidade + ", qtdEntrada=" + qtdEntrada + '}';
+        return "id=" + id + ", nome=" + nome + ", categoria=" + idCategoria + ", dataEntrada=" + dataEntrada + ", dataPrazo=" + dataPrazo + ", quantidade=" + quantidade;
     }
 }

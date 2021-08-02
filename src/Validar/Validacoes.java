@@ -1,6 +1,9 @@
 package Validar;
 
 import java.io.*;
+import static gestao.Menu.*;
+import entidade.*;
+
 
 public class Validacoes {
     private static String msg = "Dado invalido, informe dado valido: ";
@@ -38,5 +41,16 @@ public class Validacoes {
                 System.out.println(msg);
         }while(txt.isEmpty() || txt.length() < mTam);
         return txt;
+    }
+    
+    public static int verificarCat(int id) {
+        Categoria cat;
+        int index = -1;
+        for(int i=0;i<categoria.size();i++) {
+            cat = (Categoria) categoria.elementAt(i);
+            if(cat.getIdCategoria() == id)
+                index = i;
+        }
+        return index;
     }
 }

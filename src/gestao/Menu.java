@@ -6,7 +6,7 @@ import leituraEscrita.*;
 import java.io.*;
 import java.util.*;
 
-class Menu {
+public class Menu {
     public static Vector funcionarios, fornecedor, categoria, produto;
     
     public Menu() {
