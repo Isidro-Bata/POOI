@@ -19,7 +19,7 @@ class Menu {
         do{
             System.out.print("\tEntrar como:");
             System.out.print("\n1 - Administrador");
-            System.out.print("\n2 - Cliente");
+            System.out.print("\n2 - Clientes");
             System.out.print("\n3 - Sair");
             opc = (byte) Validacoes.num("\nR: ",1,3);
             switch(opc){
@@ -38,19 +38,135 @@ class Menu {
         byte opc;
         do{
             System.out.print("\tAdministrador:");
-            System.out.print("\n1 - Verificar todos produtos");
-            System.out.print("\n2 - Adicionar produtos");
-            System.out.print("\n3 - Voltar");
-            opc = (byte) Validacoes.num("\nR: ",1,3);
+            System.out.print("\n1 - Adicionar");
+            System.out.print("\n2 - Visualizar");
+            System.out.print("\n3 - Actualizar");
+            System.out.print("\n4 - Remover");
+            System.out.print("\n5 - Voltar");
+            opc = (byte) Validacoes.num("\nR: ",1,5);
             switch(opc){
                 case 1:
-                    System.out.println("\tTodos produtos");
+                    menu11();
                     break;
                 case 2:
-                    System.out.println("\tAdicionar produtos");
+                    menu12();
                     break;
+                case 3:
+                    menu13();
+                break;
+                case 4:
+                    menu14();
+                break;
             }
-        }while(opc != 3);
+        }while(opc != 5);
+    }
+    
+    private void menu11() {
+        byte opc;
+        do{
+            System.out.print("\tAdicionar:");
+            System.out.print("\n1 - Funcionario");
+            System.out.print("\n2 - Fornecedor");
+            System.out.print("\n3 - Categoria");
+            System.out.print("\n4 - Produto");
+            System.out.print("\n5 - Voltar");
+            opc = (byte) Validacoes.num("\nR: ",1,5);
+            switch(opc){
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                break;
+                case 4:
+                    
+                break;
+            }
+        }while(opc != 5);
+    }
+    
+    private void menu12() {
+        byte opc;
+        do{
+            System.out.print("\tVisualizar:");
+            System.out.print("\n1 - Funcionario");
+            System.out.print("\n2 - Fornecedor");
+            System.out.print("\n3 - Categoria");
+            System.out.print("\n4 - Produto");
+            System.out.print("\n5 - Voltar");
+            opc = (byte) Validacoes.num("\nR: ",1,5);
+            switch(opc){
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                break;
+                case 4:
+                    
+                break;
+            }
+        }while(opc != 5);
+    }
+    
+    private void menu13() {
+        byte opc;
+        do{
+            System.out.print("\tActualizar:");
+            System.out.print("\n1 - Funcionario");
+            System.out.print("\n2 - Fornecedor");
+            System.out.print("\n3 - Categoria");
+            System.out.print("\n4 - Produto");
+            System.out.print("\n5 - Voltar");
+            opc = (byte) Validacoes.num("\nR: ",1,5);
+            switch(opc){
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                break;
+                case 4:
+                    
+                break;
+            }
+        }while(opc != 5);
+    }
+    
+    private void menu14() {
+        byte opc;
+        do{
+            System.out.print("\tRemover:");
+            System.out.print("\n1 - Funcionario");
+            System.out.print("\n2 - Fornecedor");
+            System.out.print("\n3 - Categoria");
+            System.out.print("\n4 - Produto");
+            System.out.print("\n5 - Voltar");
+            opc = (byte) Validacoes.num("\nR: ",1,5);
+            switch(opc){
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                break;
+                case 4:
+                    
+                break;
+            }
+        }while(opc != 5);
     }
     
     private void menu2() {
