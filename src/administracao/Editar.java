@@ -4,50 +4,28 @@
  * and open the template in the editor.
  */
 package administracao;
+
 import entidade.*;
+
 /**
  *
  * @author vm
  */
+
 public class Editar {
-    private Fornecedor fornecedor;
-    private Stock estoque;
-    private Produto produto;
-    private Funcionario funcionario;
-    
-    public Editar(){}
-
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
-
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
-
-    public Stock getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(Stock estoque) {
-        this.estoque = estoque;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-    public Funcionario getFuncionario() {
-        return funcionario;
-    }
-
-    public void setFuncionario(Funcionario funcionario) {
-        this.funcionario = funcionario;
+    public static void editarFornecedor() {
+        
     }
     
+    public static void editarStock() {
+        
+    }
     
+    public static void editarProduto() {
+        
+    }
+    
+    public static void editarVenda() {
+        
+    }
 }

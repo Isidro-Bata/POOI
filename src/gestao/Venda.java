@@ -7,11 +7,9 @@ import java.io.*;
 
 public class Venda implements Serializable{
     private Integer id;
-    private Funcionario funcionario;
-    private Stock estoque = new Stock();
     private Cliente cliente;
     private double valorTotal;
-    private Vector vendCompra = new Vector();
+    private Vector prod;
     
     public Venda(){}
     

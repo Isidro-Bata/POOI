@@ -4,22 +4,32 @@ import java.util.*;
 import java.io.*;
 
 public class Stock implements Serializable{
-    private int id;
-    private String nome;
-    private String categoria;
-    private String dataEntrada;
-    private String dataPrazo;
-    private int quantidade;
-    private int qtdEntrada;
+    protected int id;
+    protected String nome;
+    protected String dataEntrada;
+    protected String dataPrazo;
+    protected int quantidade;
+    protected int qtdEntrada;
+    protected int idCategoria;
 
-    public Stock(int id, String nome, String categoria, String dataEntrada, String dataPrazo, int quantidade, int qtdEntrada) {
+    public Stock(int id, String nome, String dataEntrada, String dataPrazo, int quantidade, int qtdEntrada, int idCategoria) {
         this.id = id;
         this.nome = nome;
-        this.categoria = categoria;
         this.dataEntrada = dataEntrada;
         this.dataPrazo = dataPrazo;
         this.quantidade = quantidade;
         this.qtdEntrada = qtdEntrada;
+        this.idCategoria = idCategoria;
+    }
+    
+    public Stock(Stock st) {
+        this.id = st.getId();
+        this.nome = st.getNome();
+        this.dataEntrada = st.getDataEntrada();
+        this.dataPrazo = st.getDataPrazo();
+        this.quantidade = st.getQuantidade();
+        this.qtdEntrada = st.getQtdEntrada();
+        this.idCategoria = st.getIdCategoria();
     }
     
     public int getId() {
@@ -38,12 +48,12 @@ public class Stock implements Serializable{
         this.nome = nome;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public String getDataEntrada() {
@@ -80,6 +90,6 @@ public class Stock implements Serializable{
 
     @Override
     public String toString() {
-        return "Stock{" + "id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", dataEntrada=" + dataEntrada + ", dataPrazo=" + dataPrazo + ", quantidade=" + quantidade + ", qtdEntrada=" + qtdEntrada + '}';
+        return "Stock{" + "id=" + id + ", nome=" + nome + ", categoria=" + idCategoria + ", dataEntrada=" + dataEntrada + ", dataPrazo=" + dataPrazo + ", quantidade=" + quantidade + ", qtdEntrada=" + qtdEntrada + '}';
     }
 }
