@@ -37,8 +37,7 @@ class Menu {
             System.out.print("\n1 - Verificar todos produtos");
             System.out.print("\n2 - Adicionar produtos");
             System.out.print("\n3 - Voltar");
-            System.out.print("\n4 - Sair");
-            opc = (byte) Validacoes.num("\nR: ",1,4);
+            opc = (byte) Validacoes.num("\nR: ",1,3);
             switch(opc){
                 case 1:
                     System.out.println("\tTodos produtos");
@@ -46,11 +45,8 @@ class Menu {
                 case 2:
                     System.out.println("\tAdicionar produtos");
                     break;
-                case 3:
-
-                    break;
             }
-        }while(opc != 4);
+        }while(opc != 3);
     }
     
     private void menu2() {
