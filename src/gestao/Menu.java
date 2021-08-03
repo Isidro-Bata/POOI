@@ -74,17 +74,17 @@ public class Menu {
             opc = (byte) Validacoes.num("\nR: ",1,5);
             switch(opc){
                 case 1:
-                    
+                    Adicionar.adicionarFuncionario();
                     break;
                 case 2:
-                    
+                    Adicionar.adicionarFornecedor();
                     break;
                 case 3:
-                    
-                break;
+                    Adicionar.adicionarCategoria();
+                    break;
                 case 4:
-                    
-                break;
+                    Adicionar.adicionarProduto();
+                    break;
             }
         }while(opc != 5);
     }
