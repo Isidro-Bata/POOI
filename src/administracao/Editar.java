@@ -53,15 +53,102 @@ public class Editar {
         fornecedor.trimToSize();
     }
     
-    public static void editarStock() {
+    public static void editarFuncionario() {
+        Funcionario func;
+        int pos;
+        int id;
         
+        id = (int) Validacoes.num("ID(Funcionario): ",111, 999);
+  
+        pos = -1;
+        for(int i=0;i<funcionarios.size();i++){
+            func = (Funcionario) funcionarios.elementAt(i);
+            if(func.getId() == id)
+                pos = i;
+        }
+        
+        if(pos == -1) {
+            System.out.println("Funcionario nao existe...");
+            return;
+        }
+        
+        func = (Funcionario) funcionarios.elementAt(pos);
+        System.out.println("Insira novos dados");
+        String nome = Validacoes.texto("Nome: ",2);
+        String telefone = Validacoes.texto("Telefone: ",4);
+        
+        func.setNome(nome);
+        func.setTelefone(telefone);
+        
+        funcionarios.setElementAt(func,pos);
+        funcionarios.trimToSize();
     }
     
     public static void editarProduto() {
+        Produto prod;
+        int pos;
+        int id;
+        
+        id =(int) Validacoes.num("ID(Produto): ",111, 999);
+  
+        pos = -1;
+        for(int i=0;i<produto.size();i++){
+            prod = (Produto) produto.elementAt(i);
+            if(prod.getId() == id)
+                pos = i;
+        }
+        
+        if(pos == -1) {
+            System.out.println("Produto nao existe...");
+            return;
+        }
+       
+        prod = (Produto) produto.elementAt(pos);
+        
+        System.out.println("Insira novos dados");
+        String nome = Validacoes.texto("Nome: ", 4);
+        float preco = (float)Validacoes.num("Preco: ",1,999999);
+        int qtd = (int)Validacoes.num(nome, 1,999999);
+        String dataEntrada = Validacoes.texto("Data entrada: ", 8);
+        String dataPrazo = Validacoes.texto("Data prazo: ", 8);
+        
+        prod.setDataEntrada(dataEntrada);
+        prod.setDataPrazo(dataPrazo);
+        prod.setNome(nome);
+        prod.setPreco(preco);
+        prod.setQuantidade(qtd);
+        
+        produto.addElement(prod);
+        produto.trimToSize();
         
     }
     
-    public static void editarVenda() {
+    public static void editarCategoria() {
+        Categoria cat;
+        int pos;
+        int id;
         
+         id = (int) Validacoes.num("ID(Categoria): ",111,999);
+  
+        pos = -1;
+        for(int i=0;i<categoria.size();i++){
+            cat = (Categoria) categoria.elementAt(i);
+            if(cat.getIdCategoria()== id)
+                pos = i;
+        }
+        
+        if(pos == -1) {
+            System.out.println("Categoria nao existe...");
+            return;
+        }
+        
+        cat = (Categoria) categoria.elementAt(pos);
+        
+        
+        String nome = Validacoes.texto("Nome: ", 4);
+        cat.setNome(nome);
+        categoria.setElementAt(cat,pos);
+        categoria.trimToSize();
     }
+    
 }

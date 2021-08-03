@@ -1,7 +1,7 @@
 package gestao;
 
 import Validar.Validacoes;
-import administracao.Verificar;
+import administracao.*;
 import leituraEscrita.*;
 
 import java.io.*;
@@ -128,17 +128,17 @@ public class Menu {
             opc = (byte) Validacoes.num("\nR: ",1,5);
             switch(opc){
                 case 1:
-                    
+                    Editar.editarFuncionario();
                     break;
                 case 2:
-                    
+                    Editar.editarFornecedor();
                     break;
                 case 3:
-                    
-                break;
+                    Editar.editarCategoria();
+                     break;
                 case 4:
-                    
-                break;
+                    Editar.editarProduto();
+                    break;
             }
         }while(opc != 5);
     }
@@ -155,17 +155,17 @@ public class Menu {
             opc = (byte) Validacoes.num("\nR: ",1,5);
             switch(opc){
                 case 1:
-                    
+                    Remover.removerFuncionario();
                     break;
                 case 2:
-                    
+                    Remover.removerFornecedor();
                     break;
                 case 3:
-                    
-                break;
+                    Remover.removerCategoria();
+                    break;
                 case 4:
-                    
-                break;
+                    Remover.removerProduto();
+                    break;
             }
         }while(opc != 5);
     }
