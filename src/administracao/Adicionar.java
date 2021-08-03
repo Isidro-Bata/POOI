@@ -26,14 +26,21 @@ public class Adicionar {
     }
     
     public static void adicionarProduto() {
-        
+        Produto prod;
         Stock stock = addStock();
         float preco = (float) Validacoes.num("Preco: ",1,999999);
+        int pos;
         
-        Produto prod = new Produto(stock,preco);
-        
-        produto.addElement(prod);
-        produto.trimToSize();
+        if((pos = Validacoes.verificarProd(stock.getId())) != -1) {
+            prod = (Produto) produto.elementAt(pos);
+            prod.setQuantidade(stock.getQuantidade()+prod.getQuantidade());
+            produto.setElementAt(prod, pos);
+            produto.trimToSize();
+        }else {
+            prod = new Produto(stock,preco);
+            produto.addElement(prod);
+            produto.trimToSize();
+        }
     }
     
     private static Stock addStock() {
@@ -64,11 +71,19 @@ public class Adicionar {
         return id;
     }
     
-    public static void adicionarVenda() {
+    public static int adicionarFornecedor() {
         
-    }
-    
-    public static void adicionarFornecedor() {
+        int id = (int) Validacoes.num("ID: ",111,999);
+        String nome = Validacoes.texto("Nome: ", 4);
+        String endereco = Validacoes.texto("Endereco: ", 4);
+        String telefone = Validacoes.texto("Telefone: ", 8);
+        String tipoFornecedor = Validacoes.texto("Tipo: ", 4);
+        String produto = Validacoes.texto("Produto: ", 4);
         
+        Fornecedor forn = new Fornecedor(id,nome,endereco,telefone,tipoFornecedor,produto);
+        fornecedor.addElement(forn);
+        fornecedor.trimToSize();
+        
+        return id;
     }
 }

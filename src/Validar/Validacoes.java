@@ -45,12 +45,23 @@ public class Validacoes {
     
     public static int verificarCat(int id) {
         Categoria cat;
-        int index = -1;
+        int pos = -1;
         for(int i=0;i<categoria.size();i++) {
             cat = (Categoria) categoria.elementAt(i);
             if(cat.getIdCategoria() == id)
-                index = i;
+                pos = i;
         }
-        return index;
+        return pos;
+    }
+    
+    public static int verificarProd(int id) {
+        Produto prod;
+        int pos = -1;
+        for(int i=0;i<produto.size();i++) {
+            prod = (Produto) produto.elementAt(i);
+            if(prod.getId() == id)
+                pos = i;
+        }
+        return pos;
     }
 }

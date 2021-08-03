@@ -10,16 +10,14 @@ public class Fornecedor implements Serializable{
     private String telefone;
     private String tipoFornecedor;
     private String produto;
-    private int quantidade;
 
-    public Fornecedor(int id, String nome, String endereco, String telefone, String tipoFornecedor, String produto, int quantidade) {
+    public Fornecedor(int id, String nome, String endereco, String telefone, String tipoFornecedor, String produto) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
         this.tipoFornecedor = tipoFornecedor;
         this.produto = produto;
-        this.quantidade = quantidade;
     }
     
     public String getEndereco() {
@@ -69,17 +67,9 @@ public class Fornecedor implements Serializable{
     public void setProduto(String produto) {
         this.produto = produto;
     }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
     
     public String toString() {
-        return "Fornecedor{" + "nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", tipoFornecedor=" + tipoFornecedor + ", produto=" + produto + ", quantidade=" + quantidade +'}';
+        return "nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", tipoFornecedor=" + tipoFornecedor + ", produto=" + produto;
     }
   
 }
