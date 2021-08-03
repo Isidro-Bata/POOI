@@ -1,6 +1,7 @@
 package gestao;
 
 import Validar.Validacoes;
+import administracao.Verificar;
 import leituraEscrita.*;
 
 import java.io.*;
@@ -100,16 +101,16 @@ public class Menu {
             opc = (byte) Validacoes.num("\nR: ",1,5);
             switch(opc){
                 case 1:
-                    
+                    Verificar.viewFuncionario();
                     break;
                 case 2:
-                    
+                    Verificar.viewFornecedor();
                     break;
                 case 3:
-                    
+                    Verificar.viewCategoria();
                 break;
                 case 4:
-                    
+                    Verificar.viewProduto();
                 break;
             }
         }while(opc != 5);
