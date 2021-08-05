@@ -5,11 +5,11 @@
  */
 package administracao;
 import entidade.*;
-import Validar.Validacoes;
+import validar.Validacoes;
 import static gestao.Menu.*;
 /**
  *
- * @author vm
+ * @author kiDDing
  */
 public class Adicionar {
     

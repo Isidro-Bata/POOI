@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 package administracao;
+import validar.Validacoes;
 import entidade.*;
-import Validar.*;
 import static gestao.Menu.*;
 
 /**
  *
- * @author vm
+ * @author kiDDing
  */
 public class Remover {
     

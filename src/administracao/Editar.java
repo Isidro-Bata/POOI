@@ -5,13 +5,13 @@
  */
 package administracao;
 
+import validar.Validacoes;
 import entidade.*;
-import Validar.*;
 import static gestao.Menu.*;
 
 /**
  *
- * @author vm
+ * @author kiDDing
  */
 
 public class Editar {

@@ -1,6 +1,6 @@
 package gestao;
 
-import Validar.Validacoes;
+import validar.Validacoes;
 import administracao.*;
 import leituraEscrita.*;
 import vendas.*;
@@ -8,7 +8,7 @@ import java.io.*;
 import java.util.*;
 
 public class Menu {
-    public static Vector funcionarios, fornecedor, categoria, produto, venda, historico;
+    public static Vector funcionarios, fornecedor, categoria, produto, historico;
     
     public Menu() {
         menu();
@@ -190,12 +190,14 @@ public class Menu {
         fornecedor = LeituraEscrita.read("fornecedor.dat");
         categoria = LeituraEscrita.read("categoria.dat");
         produto = LeituraEscrita.read("produto.dat");
+        historico = LeituraEscrita.read("historico.dat");
     }
     
-    public static void gravarfich() {
+    public void gravarfich() {
         LeituraEscrita.write("funcionario.dat",funcionarios);
         LeituraEscrita.write("fornecedor.dat",fornecedor);
         LeituraEscrita.write("categoria.dat",categoria);
         LeituraEscrita.write("produto.dat",produto);
+        LeituraEscrita.write("historico.dat",historico);
     }
 }
