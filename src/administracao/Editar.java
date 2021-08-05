@@ -86,6 +86,7 @@ public class Editar {
     
     public static void editarProduto() {
         Produto prod;
+        String dataPrazo = "";
         int pos;
         int id;
         
@@ -108,9 +109,15 @@ public class Editar {
         System.out.println("Insira novos dados");
         String nome = Validacoes.texto("Nome: ", 4);
         float preco = (float)Validacoes.num("Preco: ",1,999999);
-        int qtd = (int)Validacoes.num(nome, 1,999999);
-        String dataEntrada = Validacoes.texto("Data entrada: ", 8);
-        String dataPrazo = Validacoes.texto("Data prazo: ", 8);
+        int qtd = (int)Validacoes.num("Quantidade: ", 1,999999);
+        String dataEntrada = Validacoes.texto("Data entrada(dd/mm/yyyy): ", 10);
+        int dataCont = (int)Validacoes.num("Produto com validade? [1- SIM| 2- NÃO]: ",1,2);
+        
+        if(dataCont == 1)
+            dataPrazo = Validacoes.texto("Data Validade(dd/mm/yyyy): ",10);
+        else
+            dataPrazo = "NULL";
+        
         
         prod.setDataEntrada(dataEntrada);
         prod.setDataPrazo(dataPrazo);
@@ -118,7 +125,7 @@ public class Editar {
         prod.setPreco(preco);
         prod.setQuantidade(qtd);
         
-        produto.addElement(prod);
+        produto.setElementAt(prod,pos);
         produto.trimToSize();
         
     }

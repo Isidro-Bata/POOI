@@ -3,12 +3,12 @@ package gestao;
 import Validar.Validacoes;
 import administracao.*;
 import leituraEscrita.*;
-
+import vendas.*;
 import java.io.*;
 import java.util.*;
 
 public class Menu {
-    public static Vector funcionarios, fornecedor, categoria, produto;
+    public static Vector funcionarios, fornecedor, categoria, produto, venda, historico;
     
     public Menu() {
         menu();
@@ -20,7 +20,7 @@ public class Menu {
         do{
             System.out.print("\tEntrar como:");
             System.out.print("\n1 - Administrador");
-            System.out.print("\n2 - Clientes");
+            System.out.print("\n2 - Caixa");
             System.out.print("\n3 - Sair");
             opc = (byte) Validacoes.num("\nR: ",1,3);
             switch(opc){
@@ -173,19 +173,16 @@ public class Menu {
     private void menu2() {
         byte opc;
         do{
-            System.out.print("\tCliente:");
-            System.out.print("\n1 - Comprar um produto");
+            System.out.print("\tCaixa:");
+            System.out.print("\n1 - Vender produto");
             System.out.print("\n2 - Voltar");
-            System.out.print("\n3 - Sair");
             opc = (byte) Validacoes.num("\nR: ",1,3);
             switch(opc){
                 case 1:
-
-                    break;
-                case 2:
+                    GestaoVenda.pedido();
                     break;
             }
-        }while(opc != 3);
+        }while(opc != 2);
     }
     
     private void lerfich() {
@@ -195,7 +192,7 @@ public class Menu {
         produto = LeituraEscrita.read("produto.dat");
     }
     
-    private void gravarfich() {
+    public static void gravarfich() {
         LeituraEscrita.write("funcionario.dat",funcionarios);
         LeituraEscrita.write("fornecedor.dat",fornecedor);
         LeituraEscrita.write("categoria.dat",categoria);

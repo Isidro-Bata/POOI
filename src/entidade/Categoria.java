@@ -5,11 +5,13 @@
  */
 package entidade;
 
+import java.io.Serializable;
+
 /**
  *
  * @author vm
  */
-public class Categoria {
+public class Categoria implements Serializable{
     private int idCategoria;
     private String nome;
 

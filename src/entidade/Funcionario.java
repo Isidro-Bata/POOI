@@ -39,6 +39,7 @@ public class Funcionario implements Serializable{
 
     @Override
     public String toString() {
-        return "id=" + id + ", nome=" + nome + ", telefone=" + telefone;
+        //return "id=" + id + ", nome=" + nome + ", telefone=" + telefone;
+        return "%-6d%-20s%6f\n"+id+nome+telefone;
     }
 }

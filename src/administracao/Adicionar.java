@@ -15,7 +15,7 @@ public class Adicionar {
     
     public static void adicionarFuncionario() {
         
-        int id = (int) Validacoes.num("ID: ",111, 999);
+        int id = (int) Validacoes.num("ID(Funcionario): ",111, 999);
         String nome = Validacoes.texto("Nome: ",2);
         String telefone = Validacoes.texto("Telefone: ",4);
         
@@ -44,16 +44,23 @@ public class Adicionar {
     }
     
     private static Stock addStock() {
-        
-        int id = (int) Validacoes.num("ID: ",111,999);
+        String dataPrazo = "";
+        int id = (int) Validacoes.num("ID(Stock): ",111,999);
         String nome = Validacoes.texto("Nome: ", 4);
         String dataEntrada = Validacoes.texto("Data(dd/mm/yyyy): ",10);
-        String dataPrazo = Validacoes.texto("Data Validade(dd/mm/yyyy): ",10);
+        int dataCont = (int)Validacoes.num("Produto com validade? [1- SIM| 2- NÃO]: ",1,2);
+        
+        if(dataCont == 1)
+            dataPrazo = Validacoes.texto("Data Validade(dd/mm/yyyy): ",10);
+        else
+            dataPrazo = "NULL";
+        
         int quantidade = (int) Validacoes.num("Quantidade: ",1, 9999);
         int idCategoria = (int) Validacoes.num("ID(categoria): ",111,999);
         
         if(Validacoes.verificarCat(idCategoria) == -1)
             idCategoria = adicionarCategoria();
+        
         
         Stock stock = new Stock(id,nome,dataEntrada,dataPrazo,quantidade,idCategoria);
         return stock;
@@ -61,7 +68,7 @@ public class Adicionar {
     
     public static int adicionarCategoria() {
         
-        int id = (int) Validacoes.num("ID: ",111,999);
+        int id = (int) Validacoes.num("ID(Categoria): ",111,999);
         String nome = Validacoes.texto("Nome: ", 4);
         
         Categoria cat = new Categoria(id,nome);
@@ -73,7 +80,7 @@ public class Adicionar {
     
     public static int adicionarFornecedor() {
         
-        int id = (int) Validacoes.num("ID: ",111,999);
+        int id = (int) Validacoes.num("ID(Fornecedor): ",111,999);
         String nome = Validacoes.texto("Nome: ", 4);
         String endereco = Validacoes.texto("Endereco: ", 4);
         String telefone = Validacoes.texto("Telefone: ", 8);
